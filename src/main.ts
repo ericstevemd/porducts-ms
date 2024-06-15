@@ -19,6 +19,6 @@ const logger =new Logger('Main');
 
   await app.listen(envs.port);
 
-  this.Logger.log(`app runing on por  ${envs.port}`)
+Logger.log(`app runing on por  ${envs.port}`)
 }
 bootstrap();
