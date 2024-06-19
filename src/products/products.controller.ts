@@ -16,7 +16,7 @@ export class ProductsController {
 
   @Get()
   findAll(@Query() PaginationDto:PaginationDto) {
-  return this.productsService.findAll(); 
+  return this.productsService.findAll(PaginationDto); 
   
     // return this.productsService.findAll();
   }
