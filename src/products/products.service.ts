@@ -40,7 +40,7 @@ const lastpage =Math.ceil(totalpages/limit)
 
   async findOne(id: number) {
     const product= await this.product.findFirst({
-      where:{id,available}
+      where:{id,available:true}
 
     });
     if (!product ){
