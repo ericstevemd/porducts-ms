@@ -11,6 +11,6 @@ page?:number=1;
 @IsPositive()
 @IsOptional()
 @Type(()=>Number)
-limit?:number=10;
+limit?: number=10;
 
 }

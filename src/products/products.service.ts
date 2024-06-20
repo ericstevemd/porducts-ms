@@ -27,13 +27,21 @@ const {page,limit }=PaginationDto;
 
 const totalpages =await this.product.count({where:{available:true}})
 const lastpage =Math.ceil(totalpages/limit)
-    return this.product.findMany({  
+    return{ 
+       data: await this.product.findMany({  
       skip:(page -1)*limit,
-      take: limit,
+      take:limit,
       where:{available:true}
 
+
+}),
+meta:{
+  page:page,
+  total:totalpages,
+lastpage:lastpage,
+}
      }
-    )
+    
     
     //return `This action returns all products`;
   }
@@ -58,7 +66,7 @@ where:{id},
 data:updateProductDto,
 
 
-  })
+  });
   }
 
 async  remove(id: number) {
